@@ -463,12 +463,9 @@
     gap: 2.5rem;
   }
   .practice-row-2 {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 2.5rem;
-  }
-  .practice-row-2 .practice-card {
-    width: calc(33.333% - 1.66rem);
   }
 }
 

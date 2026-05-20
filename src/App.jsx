@@ -1,9 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import {
   Scale,
-  Landmark,
   Building2,
-  Briefcase,
   Users,
   Phone,
   Mail,
@@ -365,68 +363,80 @@ function App() {
             <div className="gold-line center"></div>
           </div>
 
-          {/* Grid Layout representing cards. Row 1: 3 cards. Row 2: 2 cards centered */}
+          {/* Grid Layout: Row 1: 3 cards, Row 2: 3 cards */}
           <div className="practice-grid-container">
             <div className="practice-row-1">
-              {/* Card 1: General Law Practice */}
-              <div className="practice-card">
-                <div className="practice-icon-box">
-                  <Landmark size={28} />
-                </div>
-                <h3 className="practice-card-title">General Law Practice</h3>
-                <div className="practice-card-gold-line"></div>
-                <p className="practice-card-text">
-                  Our General Practice is powered by enhanced AI tools that transform how we administer, research and litigate. From intelligent document review to AI-assisted legal research and case strategy, we deliver faster, sharper, and more cost-effective outcomes for our clients.
-                </p>
-              </div>
-
-              {/* Card 2: Private Client Law */}
+              {/* Card 1: Private Client */}
               <div className="practice-card">
                 <div className="practice-icon-box">
                   <Users size={28} />
                 </div>
-                <h3 className="practice-card-title">Private Client Law</h3>
+                <h3 className="practice-card-title">Private Client</h3>
                 <div className="practice-card-gold-line"></div>
                 <p className="practice-card-text">
-                  We provide discreet, comprehensive legal services for high-net-worth individuals and families — from estate planning and wills to trusts and succession matters.
+                  We provide discreet, comprehensive legal services for high-net-worth individuals and families — from estate planning and wills to trusts, succession matters, and personal legal advisory.
                 </p>
               </div>
 
-              {/* Card 3: Property Law */}
+              {/* Card 2: Corporate Advisory */}
               <div className="practice-card">
                 <div className="practice-icon-box">
                   <Building2 size={28} />
                 </div>
-                <h3 className="practice-card-title">Property Law</h3>
+                <h3 className="practice-card-title">Corporate Advisory</h3>
                 <div className="practice-card-gold-line"></div>
                 <p className="practice-card-text">
-                  Our team handles all aspects of real estate transactions, conveyancing, title perfection, and land dispute resolution across Nigeria.
+                  We advise businesses at every stage — from incorporation and regulatory compliance to mergers, acquisitions, commercial contracts, and strategic corporate governance.
+                </p>
+              </div>
+
+              {/* Card 3: Property & Real Estate */}
+              <div className="practice-card">
+                <div className="practice-icon-box">
+                  <Building2 size={28} />
+                </div>
+                <h3 className="practice-card-title">Property & Real Estate</h3>
+                <div className="practice-card-gold-line"></div>
+                <p className="practice-card-text">
+                  Our team handles all aspects of real estate transactions, conveyancing, title perfection, property development advisory, and land dispute resolution across Nigeria.
                 </p>
               </div>
             </div>
 
             <div className="practice-row-2">
-              {/* Card 4: Corporate Law */}
+              {/* Card 4: General Litigation */}
               <div className="practice-card">
                 <div className="practice-icon-box">
-                  <Briefcase size={28} />
+                  <Scale size={28} />
                 </div>
-                <h3 className="practice-card-title">Corporate Law</h3>
+                <h3 className="practice-card-title">General Litigation (Civil & Criminal)</h3>
                 <div className="practice-card-gold-line"></div>
                 <p className="practice-card-text">
-                  We advise businesses at every stage — from incorporation and regulatory compliance to mergers, acquisitions, and commercial contracts.
+                  We represent clients robustly in civil and criminal proceedings at all levels of the Nigerian court system, combining thorough legal research with skilled courtroom advocacy to protect our clients' interests.
                 </p>
               </div>
 
-              {/* Card 5: Immigration Law */}
+              {/* Card 5: Dispute Resolution & Negotiation */}
+              <div className="practice-card">
+                <div className="practice-icon-box">
+                  <Scale size={28} />
+                </div>
+                <h3 className="practice-card-title">Dispute Resolution & Negotiation</h3>
+                <div className="practice-card-gold-line"></div>
+                <p className="practice-card-text">
+                  We offer expert alternative dispute resolution services — including arbitration, mediation, and negotiation — providing strategic and cost-effective pathways to resolving complex disputes out of court.
+                </p>
+              </div>
+
+              {/* Card 6: Immigration */}
               <div className="practice-card">
                 <div className="practice-icon-box">
                   <Users size={28} />
                 </div>
-                <h3 className="practice-card-title">Immigration Law</h3>
+                <h3 className="practice-card-title">Immigration</h3>
                 <div className="practice-card-gold-line"></div>
                 <p className="practice-card-text">
-                  We provide expert immigration advisory services for individuals, families and corporates — covering visas, residency, work permits, citizenship applications and cross-border mobility.
+                  We provide expert immigration advisory services for individuals, families and corporates — covering visas, residency, work permits, citizenship applications, and cross-border mobility solutions.
                 </p>
               </div>
             </div>
