@@ -98,6 +98,9 @@ a {
 }
 
 @media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
   .container {
     padding: 0 1.2rem;
   }
