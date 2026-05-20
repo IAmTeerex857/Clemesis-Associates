@@ -339,6 +339,9 @@ function App() {
                 Clemesis Associates is headquartered in Wuye, Abuja FCT with correspondence addresses in Asokoro FCT, Lagos, Awka and London, UK. The law firm is built on the principle that exceptional legal counsel should be personal, precise, and powerful.
               </p>
               <p className="about-paragraph">
+                Our General Practice is powered by enhanced AI tools that transform how we administer, research and litigate. From intelligent document review to AI-assisted legal research and case strategy, we deliver faster, sharper, and more cost-effective outcomes for our clients.
+              </p>
+              <p className="about-paragraph">
                 Our lawyers are comprised of internationally trained and locally qualified practitioners who bring a deep understanding of the Nigerian legal landscape, drawing on their diverse cultural and educational backgrounds to deliver results that truly matter. This rare combination of global exposure and local mastery affords our clients a decisive advantage — whether navigating complex transactions, safeguarding assets, or resolving high-stakes disputes.
               </p>
               <p className="about-paragraph">
