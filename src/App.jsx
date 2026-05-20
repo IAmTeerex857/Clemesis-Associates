@@ -245,7 +245,20 @@ function App() {
       <section id="home" className="hero-section">
         <div className="container hero-content animate-fade-in-up">
           <div className="hero-icon-container">
-            <Scale size={42} className="hero-icon" />
+            <svg width="88" height="88" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg" className="hero-icon">
+              <rect x="34" y="52" width="4" height="14" fill="#C9A84C"/>
+              <rect x="24" y="64" width="24" height="3" rx="1" fill="#C9A84C"/>
+              <rect x="35" y="12" width="2" height="40" fill="#C9A84C"/>
+              <rect x="10" y="22" width="52" height="2.5" rx="1.25" fill="#C9A84C"/>
+              <circle cx="36" cy="12" r="4" fill="#C9A84C"/>
+              <circle cx="36" cy="12" r="2" fill="#0d1523"/>
+              <line x1="36" y1="24.5" x2="16" y2="36" stroke="#C9A84C" strokeWidth="1.5" strokeLinecap="round"/>
+              <line x1="36" y1="24.5" x2="56" y2="36" stroke="#C9A84C" strokeWidth="1.5" strokeLinecap="round"/>
+              <path d="M8 36 Q16 44 24 36" stroke="#C9A84C" strokeWidth="1.8" fill="none" strokeLinecap="round"/>
+              <line x1="8" y1="36" x2="24" y2="36" stroke="#C9A84C" strokeWidth="1.5" strokeLinecap="round"/>
+              <path d="M48 36 Q56 44 64 36" stroke="#C9A84C" strokeWidth="1.8" fill="none" strokeLinecap="round"/>
+              <line x1="48" y1="36" x2="64" y2="36" stroke="#C9A84C" strokeWidth="1.5" strokeLinecap="round"/>
+            </svg>
           </div>
           <h1 className="hero-title">
             Excellence in Law.<br />

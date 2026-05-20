@@ -171,7 +171,6 @@
 
 .hero-icon {
   color: var(--color-gold-accent);
-  animation: float 4s ease-in-out infinite;
 }
 
 .hero-title {
@@ -373,7 +372,8 @@
     margin-top: 4rem;
   }
   .team-img {
-    height: 300px;
+    height: auto;
+    object-fit: contain;
   }
 }
 
