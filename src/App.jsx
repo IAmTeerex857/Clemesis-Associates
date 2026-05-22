@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import {
   Scale,
   Building2,
@@ -686,6 +687,7 @@ function App() {
           </div>
         </div>
       </footer>
+      <Analytics />
     </>
   );
 }
