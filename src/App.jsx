@@ -305,8 +305,13 @@ function App() {
             </svg>
           </div>
           <h1 className="hero-title">
-            Excellence in Law.<br />
-            <span className="italic-accent">Unwavering</span> in Purpose.
+            Excellence in
+            <span className="hero-mobile-br"><br /></span>
+            {' '}Law.
+            <span className="hero-desktop-br"><br /></span>
+            {' '}<span className="italic-accent">Unwavering</span>
+            <span className="hero-mobile-br"><br /></span>
+            {' '}in Purpose.
           </h1>
           <p className="hero-description">
             Clemesis Associates is a premier law firm in Abuja, FCT, harnessing modern AI tools in its General Law Practice to deliver sophisticated legal counsel and solutions across Private Client, Immigration, Litigation, Property & Corporate Law.
