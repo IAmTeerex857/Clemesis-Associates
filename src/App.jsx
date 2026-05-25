@@ -364,7 +364,7 @@ function App() {
           {/* About Team Full-Width Sub-section */}
           <div className="about-team-container">
             <div className="team-image-card">
-              <img src="/images/Group Image.jpeg" className="team-img" alt="The Clemesis Associates Legal Team" />
+              <img src="/images/New group image.jpg" className="team-img" alt="The Clemesis Associates Legal Team" />
             </div>
             <div className="team-caption">THE CLEMESIS ASSOCIATES TEAM</div>
           </div>
