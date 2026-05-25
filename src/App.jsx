@@ -64,10 +64,35 @@ function CountUp({ end, duration = 2000, suffix = "" }) {
   return <span ref={countRef}>{count}{suffix}</span>;
 }
 
+const PEOPLE = [
+  { name: 'Qudus Alalafia, Esq.',     role: 'Senior Associate' },
+  { name: 'Ifeanyi Egwu, Esq.',       role: 'Senior Associate' },
+  { name: 'Ifeanyi Megwalu, Esq.',    role: 'Senior Associate' },
+  { name: 'Amarachi C. Madueke, Esq.', role: 'Associate' },
+  { name: 'Joy Elochukwu, Esq.',      role: 'Associate' },
+  { name: 'Peculiar A. Okoye, Esq.', role: 'Associate' },
+  { name: 'Catherine Light',          role: 'Administration' },
+  { name: 'Nasiru John',              role: 'Office Clerk' },
+  { name: 'Queen Latifat Jamiu',      role: 'Office Secretary' },
+  { name: 'Prince Arthur Igwe',       role: 'Head of Security' },
+];
+
 function App() {
   const [isSticky, setIsSticky] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
+  const [peopleVisible, setPeopleVisible] = useState(false);
+  const peopleGridRef = useRef(null);
+
+  // Trigger Our People animation when grid enters viewport
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) setPeopleVisible(true); },
+      { threshold: 0.1 }
+    );
+    if (peopleGridRef.current) observer.observe(peopleGridRef.current);
+    return () => { if (peopleGridRef.current) observer.unobserve(peopleGridRef.current); };
+  }, []);
 
   // Track scroll position to toggle sticky class on header and active sections
   useEffect(() => {
@@ -80,7 +105,7 @@ function App() {
       }
 
       // Active section tracking logic
-      const sections = ['home', 'about', 'practice-areas', 'why-us', 'leadership', 'contact'];
+      const sections = ['home', 'about', 'practice-areas', 'why-us', 'leadership', 'our-people', 'contact'];
       const scrollPosition = window.scrollY + 120; // offset for sticky header
 
       for (const section of sections) {
@@ -159,8 +184,17 @@ function App() {
                 </a>
               </li>
               <li>
-                <a 
-                  href="#contact" 
+                <a
+                  href="#our-people"
+                  className={`nav-link ${activeSection === 'our-people' ? 'active' : ''}`}
+                  onClick={(e) => { e.preventDefault(); handleScrollTo('our-people'); }}
+                >
+                  OUR PEOPLE
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#contact"
                   className={`nav-link ${activeSection === 'contact' ? 'active' : ''}`}
                   onClick={(e) => { e.preventDefault(); handleScrollTo('contact'); }}
                 >
@@ -223,6 +257,15 @@ function App() {
           </li>
           <li>
             <a
+              href="#our-people"
+              className={`nav-link ${activeSection === 'our-people' ? 'active' : ''}`}
+              onClick={(e) => { e.preventDefault(); handleScrollTo('our-people'); }}
+            >
+              OUR PEOPLE
+            </a>
+          </li>
+          <li>
+            <a
               href="#contact"
               className={`nav-link ${activeSection === 'contact' ? 'active' : ''}`}
               onClick={(e) => { e.preventDefault(); handleScrollTo('contact'); }}
@@ -246,7 +289,7 @@ function App() {
       <section id="home" className="hero-section">
         <div className="container hero-content animate-fade-in-up">
           <div className="hero-icon-container">
-            <svg width="88" height="88" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg" className="hero-icon">
+            <svg width="80" height="80" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg" className="hero-icon">
               <rect x="34" y="52" width="4" height="14" fill="#C9A84C"/>
               <rect x="24" y="64" width="24" height="3" rx="1" fill="#C9A84C"/>
               <rect x="35" y="12" width="2" height="40" fill="#C9A84C"/>
@@ -374,7 +417,7 @@ function App() {
       {/* ==================== PRACTICE AREAS SECTION ==================== */}
       <section id="practice-areas" className="practice-section section-padding-large">
         <div className="container">
-          <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
+          <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
             <span className="section-subtitle">What We Do</span>
             <h2 className="section-title light-text">Areas of Practice</h2>
             <div className="gold-line center"></div>
@@ -386,7 +429,7 @@ function App() {
               {/* Card 1: Private Client */}
               <div className="practice-card">
                 <div className="practice-icon-box">
-                  <Users size={28} />
+                  <Users size={24} />
                 </div>
                 <h3 className="practice-card-title">Private Client</h3>
                 <div className="practice-card-gold-line"></div>
@@ -398,7 +441,7 @@ function App() {
               {/* Card 2: Corporate Advisory */}
               <div className="practice-card">
                 <div className="practice-icon-box">
-                  <Building2 size={28} />
+                  <Building2 size={24} />
                 </div>
                 <h3 className="practice-card-title">Corporate Advisory</h3>
                 <div className="practice-card-gold-line"></div>
@@ -410,7 +453,7 @@ function App() {
               {/* Card 3: Property & Real Estate */}
               <div className="practice-card">
                 <div className="practice-icon-box">
-                  <Building2 size={28} />
+                  <Building2 size={24} />
                 </div>
                 <h3 className="practice-card-title">Property & Real Estate</h3>
                 <div className="practice-card-gold-line"></div>
@@ -424,7 +467,7 @@ function App() {
               {/* Card 4: General Litigation */}
               <div className="practice-card">
                 <div className="practice-icon-box">
-                  <Scale size={28} />
+                  <Scale size={24} />
                 </div>
                 <h3 className="practice-card-title">General Litigation (Civil & Criminal)</h3>
                 <div className="practice-card-gold-line"></div>
@@ -436,7 +479,7 @@ function App() {
               {/* Card 5: Dispute Resolution & Negotiation */}
               <div className="practice-card">
                 <div className="practice-icon-box">
-                  <Scale size={28} />
+                  <Scale size={24} />
                 </div>
                 <h3 className="practice-card-title">Dispute Resolution & Negotiation</h3>
                 <div className="practice-card-gold-line"></div>
@@ -448,7 +491,7 @@ function App() {
               {/* Card 6: Immigration */}
               <div className="practice-card">
                 <div className="practice-icon-box">
-                  <Users size={28} />
+                  <Users size={24} />
                 </div>
                 <h3 className="practice-card-title">Immigration</h3>
                 <div className="practice-card-gold-line"></div>
@@ -562,6 +605,29 @@ function App() {
               </p>
             </div>
           </div>
+
+          {/* ==================== OUR PEOPLE (inside Leadership) ==================== */}
+          <div id="our-people" className="our-people-container">
+            <div className="our-people-header">
+              <span className="section-subtitle our-people-subtitle">Our People</span>
+              <div className="people-gold-line"></div>
+            </div>
+
+            <div className="people-grid" ref={peopleGridRef}>
+              {PEOPLE.map((person, index) => (
+                <div
+                  key={person.name}
+                  className={`people-card${peopleVisible ? ' animate' : ''}`}
+                  style={{ animationDelay: `${(index % 4) * 0.08}s` }}
+                >
+                  <div className="people-diamond"></div>
+                  <p className="people-name">{person.name}</p>
+                  <p className="people-role">{person.role}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
         </div>
       </section>
 
@@ -588,7 +654,7 @@ function App() {
       {/* ==================== CONTACT SECTION ==================== */}
       <section id="contact" className="contact-section section-padding-large">
         <div className="container">
-          <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
+          <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
             <span className="section-subtitle">Get In Touch</span>
             <h2 className="section-title dark-text">Contact Clemesis Associates</h2>
             <div className="gold-line center"></div>
@@ -598,7 +664,7 @@ function App() {
             {/* Card 1: Telephone */}
             <div className="contact-card">
               <div className="contact-icon-box">
-                <Phone size={24} />
+                <Phone size={20} />
               </div>
               <h3 className="contact-card-title">Telephone</h3>
               <div className="contact-card-text">
@@ -610,7 +676,7 @@ function App() {
             {/* Card 2: Email */}
             <div className="contact-card">
               <div className="contact-icon-box">
-                <Mail size={24} />
+                <Mail size={20} />
               </div>
               <h3 className="contact-card-title">Email</h3>
               <div className="contact-card-text">
@@ -621,7 +687,7 @@ function App() {
             {/* Card 3: Office */}
             <div className="contact-card">
               <div className="contact-icon-box">
-                <MapPin size={24} />
+                <MapPin size={20} />
               </div>
               <h3 className="contact-card-title">Office</h3>
               <div className="contact-card-text" style={{ fontSize: '1rem' }}>
@@ -670,6 +736,11 @@ function App() {
                 </a>
               </li>
               <li>
+                <a href="#our-people" onClick={(e) => { e.preventDefault(); handleScrollTo('our-people'); }} className="footer-link">
+                  OUR PEOPLE
+                </a>
+              </li>
+              <li>
                 <a href="#contact" onClick={(e) => { e.preventDefault(); handleScrollTo('contact'); }} className="footer-link">
                   CONTACT
                 </a>
@@ -681,7 +752,7 @@ function App() {
             <div className="copyright">
               © 2026 Clemesis Associates. All rights reserved.
             </div>
-            <div className="copyright" style={{ color: 'rgba(255,255,255,0.3)' }}>
+            <div className="copyright">
               Built with excellence.
             </div>
           </div>

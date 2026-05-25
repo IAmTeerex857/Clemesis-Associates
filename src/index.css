@@ -24,7 +24,7 @@
   --transition-fast: all 0.2s ease;
   
   /* Container Width */
-  --container-max-width: 1400px;
+  --container-max-width: 1280px;
 }
 
 /* Base Resets */
@@ -94,7 +94,7 @@ a {
   width: 100%;
   max-width: var(--container-max-width);
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 2.5rem;
 }
 
 @media (max-width: 768px) {
@@ -107,7 +107,7 @@ a {
 }
 
 .section-padding-large {
-  padding: 8rem 0;
+  padding: 7rem 0;
 }
 
 .section-padding-medium {
@@ -126,16 +126,16 @@ a {
 /* Section Header Styles */
 .section-subtitle {
   color: var(--color-gold-accent);
-  font-size: 0.95rem;
+  font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.2em;
-  margin-bottom: 0.8rem;
+  letter-spacing: 0.3em;
+  margin-bottom: 0.75rem;
   display: block;
 }
 
 .section-title {
-  font-size: 2.8rem;
+  font-size: 2.25rem;
   font-weight: 400;
   line-height: 1.2;
   margin-bottom: 1.5rem;
@@ -150,14 +150,14 @@ a {
 }
 
 .gold-line {
-  width: 60px;
-  height: 2px;
-  background-color: var(--color-gold-primary);
-  margin: 1rem 0 2.5rem 0;
+  width: 48px;
+  height: 1px;
+  background-color: var(--color-gold-accent);
+  margin: 0.75rem 0 2rem 0;
 }
 
 .gold-line.center {
-  margin: 1rem auto 2.5rem auto;
+  margin: 0.75rem auto 2rem auto;
 }
 
 /* Highlighted serif italic word styling */
@@ -173,12 +173,12 @@ a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.9rem 2.2rem;
+  padding: 0.75rem 1.5rem;
   font-family: var(--font-body);
-  font-size: 0.85rem;
-  font-weight: 700;
+  font-size: 0.75rem;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.2em;
   border-radius: 0;
   transition: var(--transition-smooth);
   cursor: pointer;
@@ -216,8 +216,8 @@ a {
   color: var(--color-gold-accent);
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.15em;
-  font-size: 0.9rem;
+  letter-spacing: 0.2em;
+  font-size: 0.875rem;
   padding-bottom: 2px;
   border-bottom: 1px solid transparent;
   transition: var(--transition-fast);
@@ -241,7 +241,8 @@ a {
 }
 
 .animate-fade-in-up {
-  animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+  animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) 1s forwards;
 }
 
 /* Utility grid spacing classes */
