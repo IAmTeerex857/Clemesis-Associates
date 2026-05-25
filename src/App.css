@@ -285,10 +285,10 @@
 }
 
 .about-paragraph {
-  font-size: 1.15rem;
+  font-size: 1rem;
   color: var(--color-text-dark);
-  line-height: 1.52; /* Tighter line-height for a sophisticated, editorial spacing */
-  margin-bottom: 1rem; /* Margins closer together as requested */
+  line-height: 1.52;
+  margin-bottom: 1rem;
   text-align: justify;
 }
 
@@ -397,83 +397,67 @@
 }
 
 .practice-card {
-  background-color: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(201, 168, 76, 0.15);
-  padding: 2.8rem 2.2rem 3.2rem 2.2rem;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 2.5rem;
   text-align: left;
-  transition: var(--transition-smooth);
+  transition: border-color 0.5s ease;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
+  cursor: default;
 }
 
 .practice-card-gold-line {
-  width: 32px;
-  height: 2px;
+  width: 2rem;
+  height: 1px;
   background-color: var(--color-gold-accent);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.25rem;
 }
 
 .practice-card:hover {
-  background-color: rgba(255, 255, 255, 0.04);
-  border-color: var(--color-gold-accent);
-  transform: translateY(-8px);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-}
-
-/* Special centering for last row items in desktop */
-.practice-card.span-centered {
-  grid-column: span 1;
+  border-color: rgba(201, 168, 76, 0.5);
 }
 
 .practice-icon-box {
-  width: 64px;
-  height: 64px;
-  border: 1px solid var(--color-gold-accent);
+  width: 48px;
+  height: 48px;
+  border: 1px solid rgba(201, 168, 76, 0.4);
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--color-gold-accent);
   margin-bottom: 2rem;
-  transition: var(--transition-smooth);
+  transition: border-color 0.5s ease;
 }
 
 .practice-card:hover .practice-icon-box {
-  background-color: var(--color-gold-accent);
-  color: var(--color-bg-dark);
+  border-color: var(--color-gold-accent);
 }
 
 .practice-card-title {
-  font-size: 1.6rem;
-  font-weight: 400;
-  margin-bottom: 1.2rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
   color: var(--color-text-light);
 }
 
 .practice-card-text {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: var(--color-white-translucent);
+  font-size: 0.875rem;
+  line-height: 1.625;
+  color: rgba(255, 255, 255, 0.5);
   font-weight: 300;
 }
 
-/* Make grid centered for last row */
 @media (min-width: 993px) {
-  /* Center the last two cards on desktop by setting up a helper layout */
   .practice-grid-container {
-    display: flex;
-    flex-direction: column;
-    gap: 2.5rem;
-  }
-  .practice-row-1 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2.5rem;
+    gap: 2rem;
   }
+  .practice-row-1,
   .practice-row-2 {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2.5rem;
+    display: contents;
   }
 }
 
@@ -483,7 +467,7 @@
     gap: 2rem;
   }
   .practice-card {
-    padding: 2.5rem 1.8rem;
+    padding: 1.8rem 1.6rem;
   }
 }
 
